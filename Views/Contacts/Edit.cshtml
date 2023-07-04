@@ -1,0 +1,25 @@
+﻿@using ContactOrganiser.Models
+@model Contact
+
+<h2>Edit Contact</h2>
+
+<form asp-action="Edit" asp-route-id="@Model.Id">
+    <div>
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="Phone">Phone:</label>
+        <input asp-for="Phone" />
+        <span asp-validation-for="Phone"></span>
+    </div>
+    <div>
+        <input type="submit" value="Save Changes" />
+    </div>
+</form>

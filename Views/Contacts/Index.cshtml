@@ -1,0 +1,32 @@
+﻿@using ContactOrganiser.Models
+@model List<Contact>
+
+<h2>Contact List</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model)
+        {
+            <tr>
+                <td>@contact.Name</td>
+                <td>@contact.Email</td>
+                <td>@contact.Phone</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@contact.Id">Edit</a>
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Contacts")" class="btn btn-primary">Add New Contact</a>
+
